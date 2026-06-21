@@ -107,3 +107,11 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+uint64
+sys_freemem(void)
+{
+  printf("sys_freemem called [sysproc.c]\n");
+  uint64 bytes = freemem();
+  return bytes;
+}
